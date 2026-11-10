@@ -1,0 +1,36 @@
+{
+  "name": "ctk-automation-testscript",
+  "version": "2.0.0",
+  "private": true,
+  "description": "CTK Email Parser Playwright suite – one master email, then Replay per parameter × operation",
+  "scripts": {
+    "login": "node scripts/login-with-otp.js",
+    "login:headed": "node scripts/login-with-otp.js --headed",
+    "test": "playwright test --project=chromium",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:all": "playwright test --project=chromium --project=firefox",
+    "test:from": "playwright test --project=chromium --grep \"@from(?![a-z])\"",
+    "test:fromname": "playwright test --project=chromium --grep \"@fromname(?![a-z])\"",
+    "test:to": "playwright test --project=chromium --grep \"@to(?![a-z])\"",
+    "test:cc": "playwright test --project=chromium --grep \"@cc(?![a-z])\"",
+    "test:textbody": "playwright test --project=chromium --grep \"@textbody(?![a-z])\"",
+    "test:htmlbody": "playwright test --project=chromium --grep \"@htmlbody(?![a-z])\"",
+    "test:subject": "playwright test --project=chromium --grep \"@subject(?![a-z])\"",
+    "test:header": "playwright test --project=chromium --grep \"@header(?![a-z])\"",
+    "test:messageid": "playwright test --project=chromium --grep \"@messageid(?![a-z])\"",
+    "cleanup": "playwright test --project=cleanup",
+    "list": "playwright test --project=chromium --list",
+    "report": "playwright show-report",
+    "test:attachment": "playwright test --project=chromium --grep \"@attachment(?![a-z])\"",
+    "test:attachmentfilenames": "playwright test --project=chromium --grep \"@attachmentfilenames(?![a-z])\""
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "jsforce": "^3.4.0",
+    "nodemailer": "^6.9.15"
+  }
+}

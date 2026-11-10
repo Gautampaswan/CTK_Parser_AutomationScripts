@@ -1,0 +1,59 @@
+{
+  "verifiedAt": "2026-11-05T13:21:50.177Z",
+  "jobInspected": "EPJ-000019 a02g800000Gmgi5AAB",
+  "parserUsedForFilterProbe": "a03g800000wPBtJAAW EP-000351",
+  "probeMethod": "New Email Filter → select Source → wait for Operation enabled → read options → Cancel (nothing saved)",
+  "replay": {
+    "mechanism": "Edit → tick checkbox Replay Job → Save",
+    "apiName": "ctkemailparser__ReplayJob__c",
+    "label": "Replay Job",
+    "noSeparateButton": true,
+    "headerActions": ["Download (EML)", "Edit", "Delete"]
+  },
+  "filterSource": [
+    "CC",
+    "From",
+    "From Name",
+    "Header",
+    "Subject",
+    "To",
+    "Attachments",
+    "Attachment File Names",
+    "Special Flags",
+    "Text Body",
+    "Email Received Date"
+  ],
+  "filterOpsBySource": {
+    "CC": ["Contains", "Ends With", "Matches Regex", "Starts with", "Matches Text"],
+    "From": ["Contains", "Ends With", "Matches Regex", "Starts with", "Matches Text"],
+    "From Name": ["Contains", "Ends With", "Matches Regex", "Starts with", "Matches Text"],
+    "Header": ["Contains", "Ends With", "Matches Regex", "Starts with", "Matches Text"],
+    "Subject": ["Contains", "Ends With", "Matches Regex", "Starts with", "Matches Text"],
+    "To": ["Contains", "Ends With", "Matches Regex", "Starts with", "Matches Text"],
+    "Attachments": ["Has Attachments"],
+    "Attachment File Names": ["Contains", "Ends With", "Matches Regex", "Starts with", "Matches Text"],
+    "Special Flags": ["Is Auto-Reply"],
+    "Text Body": ["Contains", "Matches Regex"],
+    "Email Received Date": ["Contains", "Matches Regex"]
+  },
+  "fieldParserSources": [
+    "Attached File Names",
+    "To",
+    "From",
+    "From Name",
+    "CC",
+    "Text Body",
+    "HTML Body",
+    "Subject",
+    "Header",
+    "MessageId",
+    "Email Send Date"
+  ],
+  "notes": [
+    "Source / Operation labels are human-readable (not TEXTBODY / Startswith API tokens).",
+    "Earlier HasAttachments-only reading for TEXTBODY was a false positive: Operation picklist had not refreshed after Source change.",
+    "HTML Body and Message Id are NOT on Email Filter Source — scenarios skip with reason.",
+    "Email Send Date / Email Received Date scenarios stay removed from the suite (parent request).",
+    "Field Parser uses 'Attached File Names' (not 'Attachment File Names') for attachment filename parsing."
+  ]
+}
